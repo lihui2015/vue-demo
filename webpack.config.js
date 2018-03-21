@@ -67,10 +67,17 @@ const config = {
                 NODE_ENV: isDev ? '"dev"' : '"product"'
             }
         }),
-        new HTMLPlugin()
+        new HTMLPlugin({
+            template: 'index.html'
+        })
     ],
     performance: {
         hints: isDev ? false : 'warning'
+    },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js',
+        }
     }
 }
 
