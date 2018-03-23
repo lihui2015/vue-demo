@@ -26,7 +26,7 @@ export default {
     methods: {
         init(){
             this.imgList = [];
-            for(var i = 1; i < 28; i++){
+            for(var i = 1; i < 2; i++){
                 this.imgList.push(require('../assets/images/company/company' + i + '.jpg'))
             }
         }

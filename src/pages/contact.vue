@@ -7,22 +7,22 @@
             <span class="contact-icon contact-icon-name"></span>
             <span class="contact-dt-text">公司名称</span>
         </p>
-        <p class="contact-dd">宇明阀门集团</p>
+        <p class="contact-dd">海辉智慧制造集团</p>
         <p class="contact-dt">
             <span class="contact-icon contact-icon-web"></span>
             <span class="contact-dt-text">网址</span>
         </p>
-        <a class="contact-dd dark-blue" href="http://www.ym-valve.com" target="_blank">www.ym-valve.com</a>
+        <a class="contact-dd dark-blue" href="http://www.haihui.com" target="_blank">www.haihui.com</a>
         <p class="contact-dt">
             <span class="contact-icon contact-icon-tel"></span>
             <span class="contact-dt-text">招商服务热线</span>
         </p>
-        <a href="tel:4006366616" class="contact-dd dark-blue">400-636-6616</a>
+        <a href="tel:4006366616" class="contact-dd dark-blue">400-000-0000</a>
         <p class="contact-dt">
             <span class="contact-icon contact-icon-address"></span>
             <span class="contact-dt-text">地址</span>
         </p>
-        <p class="contact-dd">河南省郑州汜水工业园</p>
+        <p class="contact-dd">江苏省无锡市新吴区震泽路18号</p>
     </div>
   </div>
 </template>
