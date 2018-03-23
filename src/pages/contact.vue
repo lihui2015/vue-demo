@@ -39,7 +39,7 @@ export default {
     },
     data () {
         return {
-            banner: './dist/Ican-bar.jpg'
+            banner: require('../assets/images/bar.jpg')
         }
     }
 };

@@ -7,6 +7,7 @@ import about from './pages/about.vue'
 import contact from './pages/contact.vue'
 import productList from './pages/productList.vue'
 import productDetail from './pages/productDetail.vue'
+import tdpreview from './pages/tdpreview.vue'
 
 //告诉 Vue 使用 VueRouter
 Vue.use(VueRouter)
@@ -30,8 +31,12 @@ export default new VueRouter({
             component: productList
         },
         {
-            path: '/productDetail',
+            path: '/productDetail/:index',
             component: productDetail
+        },
+        {
+            path: '/tdpreview/',
+            component: tdpreview
         },
         {
             path: '/',

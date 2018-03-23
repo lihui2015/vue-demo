@@ -3,7 +3,7 @@
   <div id="about" class="container">
   <myHeader message="公司简介"></myHeader>
   <div class="content">
-    <img v-for="n in 27" :src="img+n+'.jpg'" class="about-img" />
+    <img v-for="img in imgList" :src="img" class="about-img" />
   </div>
     
   </div>
@@ -17,7 +17,18 @@ export default {
     },
     data () {
         return {
-            img: '/dist/company/company',
+            imgList: []
+        }
+    },
+    mounted() {
+        this.init();
+    },
+    methods: {
+        init(){
+            this.imgList = [];
+            for(var i = 1; i < 28; i++){
+                this.imgList.push(require('../assets/images/company/company' + i + '.jpg'))
+            }
         }
     }
 };

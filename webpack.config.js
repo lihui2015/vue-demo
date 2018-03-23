@@ -2,6 +2,8 @@ const path = require('path')
 
 const HTMLPlugin = require('html-webpack-plugin');
 
+const vuxLoader = require('vux-loader');
+
 const webpack = require('webpack');
 
 //判断当前环境是否是开发环境 dev 
@@ -34,6 +36,11 @@ const config = {
                 ]
             },
             {
+                //加载 .html 文件
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
+            {
                 //css 预处理器
                 test: /\.styl/,
                 use: [
@@ -55,7 +62,7 @@ const config = {
                     loader: 'url-loader',
                     options: { //loader 的参数配置
                         limit: 1024, // 图片大小 1024
-                        name: 'Ican-[name].[ext]' //新文件名字 Ican-: 文件名前缀, [name]:原文件名,[ext]:扩展名
+                        name: 'images/[hash:8].[name].[ext]' //新文件名字 Ican-: 文件名前缀, [name]:原文件名,[ext]:扩展名
                     }
                 }]
             }
@@ -68,6 +75,7 @@ const config = {
             }
         }),
         new HTMLPlugin({
+            title: 'demo',
             template: 'index.html'
         })
     ],
@@ -98,4 +106,8 @@ if (isDev) {
     )
 }
 
-module.exports = config
+const webpackConfig = config
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui']
+})
