@@ -34,7 +34,7 @@ export default {
     mounted: function(){
       var titles = ['球墨铸铁弹簧全启式安全阀', '球墨铸铁弹簧全启式安全阀', '球墨铸铁弹簧微启式安全阀', '球墨铸铁弹簧微启式安全阀', '带扳手弹簧全启封闭式安全阀', '带扳手弹簧微启式安全阀'];
 
-        for (var i = 1; i<=6; i++){
+        for (var i = 1; i<=4; i++){
             this.items.push({
               title: titles[i -1],
               src: require('../assets/images/xilie1/xilie1-' + i + '.jpg')

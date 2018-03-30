@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     threeDSrc() {
-      return './dist/threeDSrc.html'
+      return './threeDSrc.html'
     }
   },
   data() {

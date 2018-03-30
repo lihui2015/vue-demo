@@ -17,14 +17,9 @@
             <div class="imgBox" :class="{active: tabIndex == 0}" @click="enter3DDetail">
                 <iframe class="threeD" :src="threeDSrc" allowfullscreen frameborder="0" scrolling="no">
                 </iframe>
-                <div class="fffxxx" style="position: absolute; z-index: 6000; top: 0px; left: 0px; right: 0px; bottom: 0px;">
-                </div>
             </div>
             <div class="imgBox" :class="{active: tabIndex != 0}">
-                <img :src="src" class="preview-img previewer-demo-img" @click="show(0)"/>
-            </div>
-            <div v-transfer-dom>
-                <previewer :list="previewerlist" ref="previewer" :options="options"></previewer>
+                <img :src="src" class="preview-img previewer-demo-img"/>
             </div>
             <div class="product-detail">
                 <div class="product-paragraph">
@@ -55,14 +50,10 @@ import { Previewer, TransferDom } from 'vux'
 import event from '../js/Event'
 
 export default {
-    directives: {
-        TransferDom
-    },
     components: {
         myHeader,
         Flexbox,
-        FlexboxItem,
-        Previewer
+        FlexboxItem
     },
     data () {
         return {
@@ -71,22 +62,7 @@ export default {
             src: '',
             detailImages: [],
             tabIndex: 0,
-            previewerlist: [],
-            options: {
-                getThumbBoundsFn (index) {
-                // find thumbnail element
-                let thumbnail = document.querySelectorAll('.previewer-demo-img')[index]
-                // get window scroll Y
-                let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
-                // optionally get horizontal scroll
-                // get position of element relative to viewport
-                let rect = thumbnail.getBoundingClientRect()
-                // w = width
-                return {x: rect.left, y: rect.top + pageYScroll, w: rect.width}
-                // Good guide on how to get element coordinates:
-                // http://javascript.info/tutorial/coordinates
-                }
-            }
+            previewerlist: []
         }
     },
     computed: {
@@ -115,7 +91,7 @@ export default {
             return ['',''];
         },
         threeDSrc() {
-            return './dist/threeDSrc.html';
+            return './threeDSrc.html';
         }
     },
     mounted() {
